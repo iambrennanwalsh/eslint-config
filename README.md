@@ -15,7 +15,10 @@ yarn add @iambrennanwalsh/eslint-config
 2. Create an ESLint configuration file (`.eslintrc`) within the root of your project with the following content. Extend `@iambrennanwalsh/eslint-config` if using Babel, or `@iambrennanwalsh/eslint-config/typescript` if using TypeScript.
 
 ```js
-export default = {
+// See https://github.com/eslint/eslint/issues/3458
+require('@rushstack/eslint-patch/modern-module-resolution')
+
+module.exports = {
   "root": true,
   "extends": [
     `@iambrennanwalsh/eslint-config` // If using Babel.
