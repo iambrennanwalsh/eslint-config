@@ -1,0 +1,42 @@
+{
+	"name": "@iambrennanwalsh/eslint-config",
+	"version": "0.1.0",
+	"license": "MIT",
+	"author": {
+		"name": "Brennan Walsh",
+		"email": "mail@brennanwal.sh",
+		"url": "https://www.brennanwal.sh"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/iambrennanwalsh/eslint-config"
+	},
+	"keywords": [
+		"eslint",
+		"eslintconfig"
+	],
+	"main": "index.js",
+	"dependencies": {
+		"@babel/eslint-parser": "^7.16",
+		"@typescript-eslint/parser": "^5.2",
+		"@typescript-eslint/eslint-plugin": "^5.2",
+		"eslint-import-resolver-typescript": "^2.5",
+		"eslint-import-resolver-webpack": "^0.13",
+		"eslint-plugin-import": "^2.25",
+		"eslint-plugin-prettier": "^4.0",
+		"eslint-plugin-jsx-a11y": "^6.5",
+		"eslint-plugin-react": "^7.27",
+		"eslint-plugin-react-hooks": "^4.3",
+		"eslint-plugin-jest": "^25.2",
+		"eslint-plugin-testing-library": "^5.0",
+		"prettier": "^2.4"
+	},
+	"devDependencies": {
+		"eslint": "^7.9",
+		"typescript": "^4.4"
+	},
+	"peerDependencies": {
+		"eslint": "^7.9",
+		"typescript": "^4.0"
+	}
+}
