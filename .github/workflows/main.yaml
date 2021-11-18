@@ -33,9 +33,6 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm install
 
-      - name: Bundle
-        run: npm run bundle
-
       - name: Publish to NPM
         run: npm publish
         env:
