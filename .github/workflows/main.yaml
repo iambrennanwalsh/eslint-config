@@ -1,0 +1,70 @@
+name: Main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js for NPM
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Cache
+        uses: actions/cache@v2
+        with:
+          path: ./node_modules
+          key: npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: npm-
+
+      - name: NPM Install
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm install
+
+      - name: Bundle
+        run: npm run bundle
+
+      - name: Publish to NPM
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Setup Node.js for Github
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@iambrennanwalsh'
+
+      - name: Publish to Github
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Output Version
+        id: version
+        uses: martinbeentjes/npm-get-version-action@master
+
+      - name: Tag
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            github.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: "refs/tags/${{ steps.version.outputs.current-version }}",
+              sha: context.sha
+            })
