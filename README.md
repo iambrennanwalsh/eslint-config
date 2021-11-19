@@ -4,58 +4,37 @@ My personal eslint configuration.
 
 ## Installation
 
-1. Use the [NPM](https://npmjs.com) or [Yarn](https://yarnpkg.com/) package managers to install the `@iambrennanwalsh/eslint-config` package.
+1. Use the [NPM](https://npmjs.com) or [Yarn](https://yarnpkg.com/) package managers to install the `@iambrennanwalsh/eslint-config` and `@rushstack/eslint-patch` packages. 
+
+**Note**: Until [this ongoing issue with ESLint](https://github.com/eslint/eslint/issues/3458") is fixed, you must also install `@rushstack/eslint-patch`.
 
 ```bash
-npm install @iambrennanwalsh/eslint-config
+npm install @iambrennanwalsh/eslint-config @rushstack/eslint-patch
 // or
-yarn add @iambrennanwalsh/eslint-config
+yarn add @iambrennanwalsh/eslint-config @rushstack/eslint-patch
 ```
 
-2. Create an ESLint configuration file (`.eslintrc`) within the root of your project with the following content. Extend `@iambrennanwalsh/eslint-config` if using Babel, or `@iambrennanwalsh/eslint-config/typescript` if using TypeScript.
+2. Create an ESLint configuration file (`.eslintrc`) within the root of your project with the following content.
 
 ```js
-// See https://github.com/eslint/eslint/issues/3458
 require('@rushstack/eslint-patch/modern-module-resolution')
 
 module.exports = {
   "root": true,
   "extends": [
-    `@iambrennanwalsh/eslint-config` // If using Babel.
-    `@iambrennanwalsh/eslint-config/typescript` // If using TypeScript.
+    `@iambrennanwalsh`
   ]
 }
 ```
 
-3. Thats all. Easy!
+3. Extend any optional configuration files. If extending the Prettier configuration, be sure it comes very last within your `extends` array.
 
----
+**TypeScript**: `@iambrennanwalsh/eslint-config/src/typescript`
 
-## Configurations
+**React**: `@iambrennanwalsh/eslint-config/src/react`
 
-The following configurations are provided by this package.
+**Jest**: `@iambrennanwalsh/eslint-config/src/jest`
 
-**Babel**: `@iambrennanwalsh/eslint-config`
+**Webpack**: `@iambrennanwalsh/eslint-config/src/webpack`
 
-- @babel/eslint-parser
-- eslint-import-resolver-webpack
-- eslint-plugin-import
-- eslint-plugin-react  
-- eslint-plugin-react-hooks  
-- eslint-plugin-jsx-a11y
-- eslint-plugin-jest
-- eslint-plugin-testing-library
-- eslint-plugin-prettier
-
-**TypeScript**: `@iambrennanwalsh/eslint-config/typescript`
-
-- @typescript-eslint/parser
-- @typescript-eslint/eslint-plugin
-- eslint-import-resolver-typescript
-- eslint-plugin-react  
-- eslint-plugin-react-hooks  
-- eslint-plugin-jsx-a11y
-- eslint-plugin-jest
-- eslint-plugin-testing-library
-- eslint-plugin-import
-- eslint-plugin-prettier
+**Prettier**: `@iambrennanwalsh/eslint-config/src/prettier`
