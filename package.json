@@ -1,42 +1,41 @@
 {
-  "name": "@iambrennanwalsh/eslint-config",
-  "version": "0.1.3",
-  "license": "MIT",
-  "author": {
-    "name": "Brennan Walsh",
-    "email": "mail@brennanwal.sh",
-    "url": "https://www.brennanwal.sh"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/iambrennanwalsh/eslint-config"
-  },
-  "keywords": [
-    "eslint",
-    "eslintconfig"
-  ],
-  "main": "index.js",
-  "dependencies": {
-    "@babel/eslint-parser": "^7.16",
-    "@typescript-eslint/eslint-plugin": "^5.2",
-    "@typescript-eslint/parser": "^5.2",
-    "eslint-config-prettier": "^8.3",
-    "eslint-import-resolver-typescript": "^2.5",
-    "eslint-import-resolver-webpack": "^0.13",
-    "eslint-plugin-import": "^2.25",
-    "eslint-plugin-jest": "^25.2",
-    "eslint-plugin-jsx-a11y": "^6.5",
-    "eslint-plugin-prettier": "^4.0",
-    "eslint-plugin-react": "^7.27",
-    "eslint-plugin-react-hooks": "^4.3",
-    "eslint-plugin-testing-library": "^5.0",
-    "prettier": "^2.4"
-  },
-  "devDependencies": {
-    "eslint": "^7.9",
-    "typescript": "^4.4"
-  },
-  "peerDependencies": {
-    "eslint": "^7"
-  }
+	"name": "@iambrennanwalsh/eslint-config",
+	"version": "0.1.4",
+	"description": "Personal ESLint config of @iambrennanwalsh.",
+	"license": "MIT",
+	"repository": "github:@iambrennanwalsh/eslint-config",
+	"main": "index.js",
+	"author": {
+		"name": "Brennan Walsh",
+		"email": "mail@brennanwal.sh",
+		"url": "https://www.brennanwal.sh"
+	},
+	"keywords": [
+		"eslint",
+		"eslint-config"
+	],
+	"dependencies": {
+		"@babel/eslint-parser": "^7.16",
+		"@typescript-eslint/eslint-plugin": "^5.2",
+		"@typescript-eslint/parser": "^5.2",
+		"eslint-config-prettier": "^8.3",
+		"eslint-import-resolver-typescript": "^2.5",
+		"eslint-import-resolver-webpack": "^0.13",
+		"eslint-plugin-import": "^2.25",
+		"eslint-plugin-jest": "^25.2",
+		"eslint-plugin-jsx-a11y": "^6.5",
+		"eslint-plugin-prettier": "^4.0",
+		"eslint-plugin-react": "^7.27",
+		"eslint-plugin-react-hooks": "^4.3",
+		"eslint-plugin-testing-library": "^5.0",
+		"prettier": "^2.4"
+	},
+	"devDependencies": {
+		"eslint": "~8.3",
+		"typescript": "~4.5"
+	},
+	"peerDependencies": {
+		"eslint": "^6.0 || ^7.0 || ^8.0",
+		"typescript": ">=3.0"
+	}
 }
