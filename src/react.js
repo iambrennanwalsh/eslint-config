@@ -11,7 +11,8 @@ module.exports = {
 		'plugin:jsx-a11y/recommended'
 	],
 	rules: {
-		'react/prop-types': 'off'
+		'react/prop-types': 'off',
+		'react/display-name': 'off'
 	},
 	settings: {
 		react: {
